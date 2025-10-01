@@ -1,0 +1,279 @@
+/* ============================================
+   AUTH CONTAINER
+   ============================================ */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-2xl);
+  animation: scaleIn 0.4s ease-out;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.auth-logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  font-size: 1.75rem;
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-xs);
+}
+
+.auth-subtitle {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+}
+
+/* ============================================
+   AUTH FORM
+   ============================================ */
+
+.auth-form {
+  margin-bottom: var(--spacing-lg);
+}
+
+.auth-form .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.auth-form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.auth-form-link {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #312f2f; /* Negro notorio para el texto principal */
+  margin-top: var(--spacing-md);
+}
+
+.auth-form-link a {
+  color: #5d23c0; /* Morado más notorio para el enlace */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color var(--transition-base);
+}
+
+.auth-form-link a:hover {
+  color: #6031ac; /* Morado aún más fuerte al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* ============================================
+   FORGOT PASSWORD
+   ============================================ */
+
+.forgot-password {
+  text-align: right;
+  margin-top: var(--spacing-xs);
+}
+
+.forgot-password a {
+  font-size: 0.8125rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.forgot-password a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ============================================
+   PASSWORD TOGGLE
+   ============================================ */
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-base);
+}
+
+.password-toggle:hover {
+  color: var(--gray-600);
+}
+
+/* ============================================
+   GENDER RADIO BUTTONS (REGISTRO)
+   ============================================ */
+
+.gender-radio-group {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xs);
+}
+
+.gender-radio-option {
+  flex: 1;
+  position: relative;
+}
+
+.gender-radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gender-radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.gender-radio-option input[type="radio"]:checked + .gender-radio-label {
+  border-color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.05);
+  color: var(--primary-color);
+}
+
+.gender-radio-label:hover {
+  border-color: var(--primary-light);
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.auth-form button[disabled] {
+  position: relative;
+  color: transparent;
+}
+
+.auth-form button[disabled]::after {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.625rem;
+  margin-top: -0.625rem;
+  border: 2px solid var(--white);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* ============================================
+   REGISTER FORM GRID
+   ============================================ */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.form-row .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .auth-container {
+    max-width: 100%;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .gender-radio-group {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: var(--spacing-lg);
+  }
+  
+  .auth-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .auth-title {
+    font-size: 1.25rem;
+  }
+}
+
+
+

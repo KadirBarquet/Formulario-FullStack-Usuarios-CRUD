@@ -1,0 +1,14 @@
+# Se ignoran solo los archivos y directorios innecesarios
+node_modules/
+.env
+*.log
+.DS_Store
+dist/
+build/
+.vscode/
+package-lock.json
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
