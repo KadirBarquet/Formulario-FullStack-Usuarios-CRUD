@@ -63,11 +63,11 @@ export const validateUserData = (req, res, next) => {
   }
 
   // Validar género
-  const validGeneros = ['masculino', 'femenino', 'otro'];
+  const validGeneros = ['masculino', 'femenino'];
   if (!genero) {
     errors.push('Género es requerido');
   } else if (!validGeneros.includes(genero)) {
-    errors.push('Género inválido (debe ser: masculino, femenino u otro)');
+    errors.push('Género inválido (debe ser: masculino ó femenino');
   }
 
   // Validar ciudad
