@@ -27,13 +27,13 @@ pool.on('error', (err, client) => {
 export const testConnection = async () => {
   try {
     const client = await pool.connect();
-    console.log('✅ Conexión exitosa a PostgreSQL');
+    console.log('Conexión exitosa a PostgreSQL');
     const result = await client.query('SELECT NOW()');
-    console.log('⏰ Hora del servidor DB:', result.rows[0].now);
+    console.log('Hora del servidor DB:', result.rows[0].now);
     client.release();
     return true;
   } catch (error) {
-    console.error('❌ Error al conectar a PostgreSQL:', error.message);
+    console.error('Error al conectar a PostgreSQL:', error.message);
     return false;
   }
 };
